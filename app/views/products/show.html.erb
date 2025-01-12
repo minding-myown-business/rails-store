@@ -3,6 +3,7 @@
   <h1><%= @product.name %></h1>
   <p><%= @product.description %></p>
 <% end %>
+<%= render "inventory", product: @product %>
 <%= link_to "Back", products_path %>
 <%= link_to "Edit", edit_product_path(@product) if authenticated? %>
 <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure???" } if authenticated? %>

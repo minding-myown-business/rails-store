@@ -29,7 +29,8 @@
       <%= link_to "Log In", new_session_path unless authenticated? %>
     </nav>
     <main>
-    <%= yield %>
+      <div class="notice"><%= notice %></div>
+      <%= yield %>
     </main>
   </body>
 </html>
