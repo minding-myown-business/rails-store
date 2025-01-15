@@ -19,8 +19,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Set execution permissions for bin/rails
-        run: chmod +x bin/rails
+      - name: Set execution permissions for bin/rails and others
+        run: chmod +x bin/rails && chmod +x bin/brakeman && chmod +x bin/importmap && chmod +x bin/rubocop
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
@@ -38,8 +38,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Set execution permissions for bin/rails
-        run: chmod +x bin/rails
+      - name: Set execution permissions for bin/rails and others
+        run: chmod +x bin/rails && chmod +x bin/brakeman && chmod +x bin/importmap && chmod +x bin/rubocop
 
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
@@ -56,8 +56,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Set execution permissions for bin/rails
-        run: chmod +x bin/rails
+      - name: Set execution permissions for bin/rails and others
+        run: chmod +x bin/rails && chmod +x bin/brakeman && chmod +x bin/importmap && chmod +x bin/rubocop
 
       - name: Lint code for consistent style
         run: bin/rubocop -f github
@@ -78,8 +78,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Set execution permissions for bin/rails
-        run: chmod +x bin/rails
+      - name: Set execution permissions for bin/rails and others
+        run: chmod +x bin/rails && chmod +x bin/brakeman && chmod +x bin/importmap && chmod +x bin/rubocop
 
       - name: Run tests
         env:
